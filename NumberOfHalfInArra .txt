@@ -1,0 +1,30 @@
+
+
+class Solution {
+    public int MoreThanHalfNum_Solution(int [] array) {
+        int result = 0;
+        int num = 0;
+        for(int i=0; i<array.length; i++){
+            if(num == 0){
+                result = array[i];
+                num++;
+            }
+            if(array[i] != result)
+                num--;
+            else
+                num++;
+        }
+        num = 0;
+        for(int i=0; i<array.length; i++){
+            if(array[i] == result)
+                num++;
+        }
+        if(num <= array.length/2)
+            return 0;
+        else
+            return result;
+    }
+}
+
+public class Main {
+}
